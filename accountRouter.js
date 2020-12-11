@@ -21,4 +21,15 @@ router.post('/', async (req, res) => {
   }
 })
 
+router.get('/', async (req, res) => {
+  try {
+    const data = JSON.parse(await readFile('accounts.json'))
+    delete data.nextId
+
+    res.send(data)
+  } catch (err) {
+    res.status(400).send({ error: err.message })
+  }
+})
+
 export default router
