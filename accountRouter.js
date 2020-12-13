@@ -8,9 +8,18 @@ const router = express.Router()
 router.post('/', async (req, res, next) => {
   try {
     let account = req.body
+
+    if (!account.name || account.balance == null) {
+      throw new Error('Name e balance sao obrigatorios')
+    }
+
     const data = JSON.parse(await readFile('accounts.json'))
 
-    account = { id: data.nextId++, ...account }
+    account = {
+      id: data.nextId++,
+      name: account.name,
+      balance: account.balance,
+    }
     data.accounts.push(account)
 
     await writeFile('accounts.json', JSON.stringify(data, null, 2))
@@ -68,12 +77,21 @@ router.put('/', async (req, res, next) => {
   try {
     const account = req.body
 
+    if (!account.name || account.balance == null) {
+      throw new Error('Name e balance sao obrigatorios')
+    }
+
     const data = JSON.parse(await readFile('accounts.json'))
     const index = data.accounts.findIndex((a) => a.id === account.id)
 
-    data.accounts[index] = account
+    if (index === -1) {
+      throw new Error('Registro nao encontrado')
+    }
 
-    await writeFile('accounts.json', JSON.stringify(data))
+    data.accounts[index].name = account.name
+    data.accounts[index].balance = account.balance
+
+    await writeFile('accounts.json', JSON.stringify(data, null, 2))
 
     res.send(account)
     logger.info(`PUT /account - ${JSON.stringify(account)}`)
@@ -89,9 +107,17 @@ router.patch('/updateBalance', async (req, res, next) => {
     const data = JSON.parse(await readFile('accounts.json'))
     const index = data.accounts.findIndex((a) => a.id === account.id)
 
+    if (!account.id || account.balance == null) {
+      throw new Error('Id e balance sao obrigatorios')
+    }
+
+    if (index === -1) {
+      throw new Error('Registro nao encontrado')
+    }
+
     data.accounts[index].balance = account.balance
 
-    await writeFile('accounts.json', JSON.stringify(data))
+    await writeFile('accounts.json', JSON.stringify(data, null, 2))
 
     res.send(data.accounts[index])
     logger.info(`PATCH /account/updateBalance - ${JSON.stringify(account)}`)

@@ -14,3 +14,17 @@
 2020-12-13T05:32:08.856Z [my-bank-api] info: DELETE /account/:id - 1
 2020-12-13T05:32:12.635Z [my-bank-api] info: DELETE /account/:id - 1
 2020-12-13T05:32:12.833Z [my-bank-api] info: API running!
+2020-12-13T06:08:53.048Z [my-bank-api] info: API running!
+2020-12-13T06:09:12.426Z [my-bank-api] error: PATCH - /account - Id e balance sao obrigatorios
+2020-12-13T06:09:17.339Z [my-bank-api] error: PUT - /account - Registro nao encontrado
+2020-12-13T06:09:22.741Z [my-bank-api] error: PUT - /account - Registro nao encontrado
+2020-12-13T06:09:23.657Z [my-bank-api] error: PUT - /account - Registro nao encontrado
+2020-12-13T06:09:25.442Z [my-bank-api] info: GET /account
+2020-12-13T06:09:27.437Z [my-bank-api] info: POST /account - {"id":2,"name":"Paulo Almeida","balance":2000}
+2020-12-13T06:09:27.649Z [my-bank-api] info: API running!
+2020-12-13T06:09:34.965Z [my-bank-api] error: PUT - /account - Registro nao encontrado
+2020-12-13T06:09:42.777Z [my-bank-api] info: GET /account
+2020-12-13T06:09:48.399Z [my-bank-api] info: PUT /account - {"id":2,"name":"Paulo Almeida","balance":5000}
+2020-12-13T06:09:48.571Z [my-bank-api] info: API running!
+2020-12-13T06:10:03.978Z [my-bank-api] error: PUT - /account - Registro nao encontrado
+2020-12-13T06:10:12.751Z [my-bank-api] error: PUT - /account - Name e balance sao obrigatorios
