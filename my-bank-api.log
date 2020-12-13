@@ -1,0 +1,16 @@
+2020-12-13T05:30:47.350Z [my-bank-api] info: API running and file created!
+2020-12-13T05:30:47.553Z [my-bank-api] info: API running!
+2020-12-13T05:31:20.751Z [my-bank-api] info: GET /account
+2020-12-13T05:31:22.417Z [my-bank-api] info: DELETE /account/:id - 3
+2020-12-13T05:31:25.130Z [my-bank-api] info: POST /account - {"id":1,"name":"Paulo Almeida","balance":2000}
+2020-12-13T05:31:25.326Z [my-bank-api] info: API running!
+2020-12-13T05:31:27.858Z [my-bank-api] info: PUT /account - {"id":3,"name":"Paulo Almeida","balance":5000}
+2020-12-13T05:31:28.048Z [my-bank-api] info: API running!
+2020-12-13T05:31:29.834Z [my-bank-api] error: PATCH - /account - Cannot set property 'balance' of undefined
+2020-12-13T05:32:01.550Z [my-bank-api] info: PATCH /account/updateBalance - {"id":1,"balance":2000}
+2020-12-13T05:32:01.751Z [my-bank-api] info: API running!
+2020-12-13T05:32:04.401Z [my-bank-api] info: GET /account
+2020-12-13T05:32:06.204Z [my-bank-api] info: DELETE /account/:id - 3
+2020-12-13T05:32:08.856Z [my-bank-api] info: DELETE /account/:id - 1
+2020-12-13T05:32:12.635Z [my-bank-api] info: DELETE /account/:id - 1
+2020-12-13T05:32:12.833Z [my-bank-api] info: API running!
