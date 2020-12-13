@@ -14,5 +14,8 @@
     "nodemon": "^2.0.6",
     "winston": "^3.3.3"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }

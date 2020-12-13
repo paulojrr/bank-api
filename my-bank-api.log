@@ -28,3 +28,9 @@
 2020-12-13T06:09:48.571Z [my-bank-api] info: API running!
 2020-12-13T06:10:03.978Z [my-bank-api] error: PUT - /account - Registro nao encontrado
 2020-12-13T06:10:12.751Z [my-bank-api] error: PUT - /account - Name e balance sao obrigatorios
+2020-12-13T06:22:44.518Z [my-bank-api] info: API running!
+2020-12-13T06:22:50.560Z [my-bank-api] error: PUT - /account - Id, Name e balance sao obrigatorios
+2020-12-13T06:22:53.274Z [my-bank-api] info: GET /account
+2020-12-13T06:22:57.148Z [my-bank-api] info: DELETE /account/:id - 1
+2020-12-13T06:23:00.389Z [my-bank-api] info: DELETE /account/:id - 2
+2020-12-13T06:23:02.361Z [my-bank-api] info: GET /account

@@ -77,8 +77,8 @@ router.put('/', async (req, res, next) => {
   try {
     const account = req.body
 
-    if (!account.name || account.balance == null) {
-      throw new Error('Name e balance sao obrigatorios')
+    if (!account.id || !account.name || account.balance == null) {
+      throw new Error('Id, Name e balance sao obrigatorios')
     }
 
     const data = JSON.parse(await readFile('accounts.json'))

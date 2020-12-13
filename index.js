@@ -1,6 +1,7 @@
 import express from 'express'
 import { promises as fs } from 'fs'
 import winston from 'winston'
+import cors from 'cors'
 
 import accounterRouter from './accountRouter.js'
 
@@ -22,6 +23,7 @@ global.logger = winston.createLogger({
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 app.use('/account', accounterRouter)
 
