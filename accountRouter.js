@@ -45,4 +45,18 @@ router.get('/:id', async (req, res) => {
   }
 })
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const data = JSON.parse(await readFile('accounts.json'))
+    data.accounts = data.accounts.filter(
+      (account) => account.id !== parseInt(req.params.id)
+    )
+
+    await writeFile('accounts.json', JSON.stringify(data, null, 2))
+
+    res.end()
+  } catch (err) {
+    res.status(400).send({ error: err.message })
+  }
+})
 export default router
