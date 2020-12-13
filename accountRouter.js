@@ -59,4 +59,39 @@ router.delete('/:id', async (req, res) => {
     res.status(400).send({ error: err.message })
   }
 })
+
+router.put('/', async (req, res) => {
+  try {
+    const account = req.body
+
+    const data = JSON.parse(await readFile('accounts.json'))
+    const index = data.accounts.findIndex((a) => a.id === account.id)
+
+    data.accounts[index] = account
+
+    await writeFile('accounts.json', JSON.stringify(data))
+
+    res.send(account)
+  } catch (err) {
+    res.status(400).send({ error: err.message })
+  }
+})
+
+router.patch('/updateBalance', async (req, res) => {
+  try {
+    const account = req.body
+
+    const data = JSON.parse(await readFile('accounts.json'))
+    const index = data.accounts.findIndex((a) => a.id === account.id)
+
+    data.accounts[index].balance = account.balance
+
+    await writeFile('accounts.json', JSON.stringify(data))
+
+    res.send(data.accounts[index])
+  } catch (err) {
+    res.status(400).send({ error: err.message })
+  }
+})
+
 export default router
